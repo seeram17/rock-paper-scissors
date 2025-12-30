@@ -68,3 +68,26 @@ function resetScore() {
     document.querySelector('.game-result').innerHTML = '';
     document.querySelector('.game-moves').innerHTML = '';
 }
+
+let isAutoPlaying = false;
+let intervalId;
+
+function autoplay() {
+    if (!isAutoPlaying) {
+
+        intervalId = setInterval(function () {
+
+            const playermove = generate();
+            playGame(playermove);
+        }, 1000);
+
+        isAutoPlaying = true;
+
+        document.querySelector('.auto-play-btn').textContent = 'Stop Play';
+    } else {
+
+        clearInterval(intervalId);
+        isAutoPlaying = false;
+        document.querySelector('.auto-play-btn').textContent = 'Auto Play';
+    }
+}
