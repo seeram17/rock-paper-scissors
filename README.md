@@ -9,6 +9,8 @@ A simple and interactive Rock Paper Scissors game built using **HTML, CSS, and J
 - Persistent score using `localStorage`
 - Clean and responsive UI
 - Reset score option
+- Auto Play Button
+- Stop Play Button 
 
 ##  Technologies Used
 - HTML5
