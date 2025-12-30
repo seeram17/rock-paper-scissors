@@ -74,18 +74,15 @@ let intervalId;
 
 function autoplay() {
     if (!isAutoPlaying) {
-
         intervalId = setInterval(function () {
-
-            const playermove = generate();
-            playGame(playermove);
+            const playerMove = generate();
+            const computerMove = generate();
+            check(playerMove, computerMove);
         }, 1000);
 
         isAutoPlaying = true;
-
         document.querySelector('.auto-play-btn').textContent = 'Stop Play';
     } else {
-
         clearInterval(intervalId);
         isAutoPlaying = false;
         document.querySelector('.auto-play-btn').textContent = 'Auto Play';
